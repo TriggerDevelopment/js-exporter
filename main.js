@@ -52,18 +52,19 @@ $(function() {
                 }
 
                 let isScheduled = false;
-                $iframe.find('.da_table:first tr td:eq(3)').each(function(){
-                    if($(this).text().toLowerCase().includes('call scheduled')) {
+                $iframe.find('.daTable tbody tr td:eq(3)').each(function(i,e){
+
+                    if($(e).text().toLowerCase().includes('call scheduled')) {
+                        console.log($(e).text().toLowerCase());
                         isScheduled = true;
                     }
                 });
-                if(!isScheduled && isDbs) {
-                    dates[dateName].dbsNotBooked ++;
-                }
                 if(isScheduled && isDbs) {
                     dates[dateName].booked ++;
                 }
-
+                if(!isScheduled && isDbs) {
+                    dates[dateName].dbsNotBooked ++;
+                }
 
             });
             for (var key in dates) {
@@ -84,6 +85,6 @@ $(function() {
             pom.click();
             alert('Export done. Love from Sam <3');
 
-        }, 15000);
+        }, 12000);
 
     });
