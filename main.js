@@ -69,7 +69,7 @@ $(function() {
             for (var key in dates) {
                 if (dates.hasOwnProperty(key)) {
                     let value = dates[key];
-                    let row = value.date + ',' + value.total + ',' + value.active + ',' + value.inactive + ',' + value.free + ',' + value.booked + ',' + value.dbs + ',' + value.ia + ',' + value.pending + '\n';
+                    let row = value.date + ',' + value.total + ',' + value.active + ',' + value.inactive + ',' + value.free + ',' + value.booked + ',' + value.dbsNotBooked + ',' + value.dbs + ',' + value.ia + ',' + value.pending + '\n';
                     output += row;
                 }
             }
