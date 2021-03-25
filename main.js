@@ -5,7 +5,7 @@ $(function() {
         let $table = $(".daTable");
         let $tableBody = $table.find('tbody');
         $tableBody.find('tr').each(function(index, tr) {
-            let dateName = $(tr).find('td:nth-child(2) .qtippopup').text()
+            let dateName = $(tr).find('td:nth-child(2) .qtippopup').text();
             if(dateName != null && dateName.length > 0) {
                 if(dates[dateName] == null) {
                     dates[dateName] = {'date': dateName,'total': 0, 'active': 0, 'inactive': 0, 'free': 0, 'booked': 0,'dbsNotBooked': 0 , 'dbs': 0, 'ia': 0, 'pending': 0};
@@ -52,9 +52,9 @@ $(function() {
                 }
 
                 let isScheduled = false;
-                $iframe.find('.daTable tbody tr td:eq(3)').each(function(i,e){
+                $iframe.find('table tbody tr td').each(function(i,e){
 
-                    if($(e).text().toLowerCase().includes('call scheduled')) {
+                    if($(e).text().toLowerCase() === 'call scheduled') {
                         console.log($(e).text().toLowerCase());
                         isScheduled = true;
                     }
@@ -74,6 +74,7 @@ $(function() {
                     output += row;
                 }
             }
+          
 
             var pom = document.createElement('a');
             var csvContent=output; //here we load our csv data
@@ -85,6 +86,6 @@ $(function() {
             pom.click();
             alert('Export done. Love from Sam <3');
 
-        }, 12000);
+        }, 20000);
 
     });
