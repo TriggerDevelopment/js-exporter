@@ -50,7 +50,7 @@ $(function() {
 
             let isScheduled = false;
             $iframe.find('.da_table:first tr td:eq(3)').each(function(){
-                if($(this).text().toLowerCase().includes('scheduled')) {
+                if($(this).text().toLowerCase().includes('call scheduled')) {
                     isScheduled = true;
                 }
             });
